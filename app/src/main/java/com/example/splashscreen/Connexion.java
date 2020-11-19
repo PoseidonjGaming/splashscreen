@@ -16,6 +16,6 @@ public class Connexion extends AppCompatActivity {
 
 
     public void BTN_SignInClick(View view) {
-        startActivity(new Intent(Connexion.this, listFiche.class));
+        startActivity(new Intent(Connexion.this, MenuFiche.class));
     }
 }
