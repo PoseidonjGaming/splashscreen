@@ -24,4 +24,5 @@ public class Dashboard extends AppCompatActivity {
     public void BTN_LoginClick(View view) {
         startActivity(new Intent(Dashboard.this, Connexion.class));
     }
+
 }
