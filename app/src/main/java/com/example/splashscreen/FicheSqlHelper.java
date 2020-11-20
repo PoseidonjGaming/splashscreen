@@ -49,7 +49,7 @@ public class FicheSqlHelper extends SQLiteOpenHelper {
 
 
     /************************************************/
-    /******** retourne la liste des series         **/
+    /******** retourne la liste des Fiche         **/
     /************************************************/
     public ArrayList<Fiche> getLesSeries() {
         ArrayList<Fiche> lesSesries = new ArrayList<Fiche>();
@@ -59,10 +59,10 @@ public class FicheSqlHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 Fiche serie = new Fiche(
+                        cursor.getString(0),
                         cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getInt(3),
-                        cursor.getInt(4)
+                        cursor.getInt(2),
+                        cursor.getInt(3)
                        );
                 lesSesries.add(serie);
             } while (cursor.moveToNext());
@@ -70,9 +70,9 @@ public class FicheSqlHelper extends SQLiteOpenHelper {
         return lesSesries;
     }
     /************************************************/
-    /******** retourne une serie                   **/
+    /******** retourne une Fiche                   **/
     /************************************************/
-    public Fiche getSerie(long id) {
+    public Fiche getFiche(long id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_FICHE, new String[] {
                         COLUMN_ID_FICHE,
@@ -90,24 +90,5 @@ public class FicheSqlHelper extends SQLiteOpenHelper {
                 cursor.getInt(3));
         return fiche;
         }
-    /************************************************/
-    /******** creer une serie                      **/
-    /************************************************/
-    /*public void addFiche(Fiche fiche){
-            SQLiteDatabase db1 = this.getWritableDatabase();
-            ContentValues values = new ContentValues();
-            //values.put(COLUMN_id, serie.getId());
-            values.put(COLUMN_ID_FICHE, fiche.getId_Fiche());
-            values.put(COLUMN_MOIS, fiche.getMois());
-            values.put(COLUMN_ID_VISIT, fiche.getId_Visiteur());
-            values.put(COLUMN_ID_ETAT, fiche.getEtat());
-            // Inserting Row
-            db.insert(TABLE_FICHE, null, values);
-            // Closing database connection
-            db.close();
-        }*/
     }
-
-
-
 }
