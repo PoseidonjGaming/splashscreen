@@ -9,6 +9,6 @@ public class AjoutFiche extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mune_fiche);
+        setContentView(R.layout.detail_fiche);
     }
 }

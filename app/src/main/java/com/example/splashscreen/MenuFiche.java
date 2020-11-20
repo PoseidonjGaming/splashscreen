@@ -17,4 +17,8 @@ public class MenuFiche extends AppCompatActivity {
     public void BTN_AjoutFiche(View view) {
         startActivity(new Intent(MenuFiche.this, AjoutFiche.class));
     }
+
+    public void BTNListFiche_Click(View view) {
+        startActivity(new Intent(MenuFiche.this, listFiche.class));
+    }
 }
