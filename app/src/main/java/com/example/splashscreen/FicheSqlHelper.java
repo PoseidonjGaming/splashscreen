@@ -60,7 +60,7 @@ public class FicheSqlHelper extends SQLiteOpenHelper {
             do {
                 Fiche serie = new Fiche(
                         cursor.getString(0),
-                        cursor.getString(1),
+                        cursor.getInt(1),
                         cursor.getInt(2),
                         cursor.getInt(3)
                        );
@@ -72,23 +72,22 @@ public class FicheSqlHelper extends SQLiteOpenHelper {
     /************************************************/
     /******** retourne une Fiche                   **/
     /************************************************/
-    public Fiche getFiche(long id) {
+    public Fiche getSerie(long id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_FICHE, new String[] {
-                        COLUMN_ID_FICHE,
+                        COLUMN_ID_VISIT,
                         COLUMN_MOIS,
                         COLUMN_ID_VISIT,
-                        COLUMN_ID_ETAT,
+                        COLUMN_ID_ETAT}, COLUMN_MOIS + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
         Fiche fiche = new Fiche(
                 cursor.getString(0),
-                cursor.getString(1),
+                cursor.getInt(1),
                 cursor.getInt(2),
                 cursor.getInt(3));
         return fiche;
-        }
     }
 }

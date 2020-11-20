@@ -12,7 +12,6 @@
         <activity android:name=".Dashboard"></activity>
         <activity android:name=".Connexion"/>
         <activity android:name=".listFiche"/>
-        <activity android:name=".MenuFiche"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

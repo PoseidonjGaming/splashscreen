@@ -2,12 +2,12 @@ package com.example.splashscreen;
 
 public class Fiche {
     private String mois;
-    private String etat;
+    private int etat;
     private int id_Fiche;
     private int id_Visiteur;
 
 
-    public Fiche(String mois, String etat, int id_fiche, int id_visiteur) {
+    public Fiche(String mois, int etat, int id_fiche, int id_visiteur) {
         this.mois = mois;
         this.etat = etat;
         id_Fiche = id_fiche;
@@ -23,11 +23,11 @@ public class Fiche {
     }
 
 
-    public String getEtat() {
+    public int getEtat() {
         return etat;
     }
 
-    public void setEtat(String etat) {
+    public void setEtat(int etat) {
         this.etat = etat;
     }
 
