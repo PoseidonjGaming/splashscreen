@@ -24,6 +24,7 @@
         android:layout_width="221dp"
         android:layout_height="53dp"
         android:background="#41D3FF"
+        android:onClick="BTN_AjoutFiche"
         android:text="Ajouter une fiche"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
