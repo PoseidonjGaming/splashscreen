@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class VisiteurSqlHelper extends SQLiteOpenHelper {
 
-    public static final String TABLE_SERIE = "VISITEUR";
+    public static final String TABLE_VISITEUR = "VISITEUR";
     private static final String DATABASE_NAME = "bdamarionneau3.db";
     private static final int DATABASE_VERSION = 1;
 
@@ -27,7 +27,7 @@ public class VisiteurSqlHelper extends SQLiteOpenHelper {
 
 
     private static final String DATABASE_CREATE = "create table "
-            + TABLE_SERIE + "("+ " integer primary key autoincrement, " + COLUMN_ID_VISIT
+            + TABLE_VISITEUR + "("+ " integer primary key autoincrement, " + COLUMN_ID_VISIT
             + " text not null, " + COLUMN_NOM
             + " text not null, " + COLUMN_PRENOM
             + " text not null, " + COLUMN_LOGIN
@@ -51,7 +51,7 @@ public class VisiteurSqlHelper extends SQLiteOpenHelper {
         Log.w(VisiteurSqlHelper.class.getName(),
                 "Upgrading database from version " + oldVersion + " to "
                         + newVersion + ", which will destroy all old data");
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SERIE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_VISITEUR);
         onCreate(db);
     }
 
@@ -61,7 +61,7 @@ public class VisiteurSqlHelper extends SQLiteOpenHelper {
     /************************************************/
     public ArrayList<Visiteur> getLesSeries() {
         ArrayList<Visiteur> lesSesries = new ArrayList<Visiteur>();
-        String selectQuery = "SELECT  * FROM " + TABLE_SERIE;
+        String selectQuery = "SELECT  * FROM " + TABLE_VISITEUR;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
@@ -83,9 +83,9 @@ public class VisiteurSqlHelper extends SQLiteOpenHelper {
     /************************************************/
     /******** retourne une serie                   **/
     /************************************************/
-    public Visiteur getSerie(long id) {
+    public Visiteur getVisiteur(long id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_SERIE, new String[] {
+        Cursor cursor = db.query(TABLE_VISITEUR, new String[] {
                         COLUMN_ID_VISIT,
                         COLUMN_NOM,
                         COLUMN_PRENOM,
