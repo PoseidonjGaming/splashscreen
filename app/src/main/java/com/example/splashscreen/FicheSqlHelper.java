@@ -70,9 +70,9 @@ public class FicheSqlHelper extends SQLiteOpenHelper {
         return lesSesries;
     }
     /************************************************/
-    /******** retourne une Fiche                   **/
+    /******** retourne les Fiches                   **/
     /************************************************/
-    public Fiche getSerie(long id) {
+    public Fiche getFiche(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_FICHE, new String[] {
                         COLUMN_ID_VISIT,

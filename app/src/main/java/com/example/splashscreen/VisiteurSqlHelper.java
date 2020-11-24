@@ -27,7 +27,7 @@ public class VisiteurSqlHelper extends SQLiteOpenHelper {
 
 
     private static final String DATABASE_CREATE = "create table "
-            + TABLE_VISITEUR + "("+ " integer primary key autoincrement, " + COLUMN_ID_VISIT
+            + TABLE_VISITEUR + "("+COLUMN_ID_VISIT+ " integer primary key autoincrement, "
             + " text not null, " + COLUMN_NOM
             + " text not null, " + COLUMN_PRENOM
             + " text not null, " + COLUMN_LOGIN
@@ -83,7 +83,7 @@ public class VisiteurSqlHelper extends SQLiteOpenHelper {
     /************************************************/
     /******** retourne une serie                   **/
     /************************************************/
-    public Visiteur getVisiteur(long id) {
+    public Visiteur getVisiteur(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_VISITEUR, new String[] {
                         COLUMN_ID_VISIT,
