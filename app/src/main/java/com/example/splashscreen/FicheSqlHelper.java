@@ -78,7 +78,7 @@ public class FicheSqlHelper extends SQLiteOpenHelper {
                         COLUMN_ID_VISIT,
                         COLUMN_MOIS,
                         COLUMN_ID_VISIT,
-                        COLUMN_ID_ETAT}, COLUMN_MOIS + "=?",
+                        COLUMN_ID_ETAT}, COLUMN_ID_VISIT + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();

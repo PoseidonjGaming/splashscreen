@@ -93,7 +93,7 @@ public class VisiteurSqlHelper extends SQLiteOpenHelper {
                         COLUMN_MDP,
                         COLUMN_ADRESSE,
                         COLUMN_CP,
-                        COLUMN_VILLE}, COLUMN_ID_VISIT + "=?",
+                        COLUMN_VILLE}, COLUMN_LOGIN + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
