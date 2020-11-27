@@ -24,8 +24,8 @@ public class Connexion extends AppCompatActivity {
         EditText login=findViewById(R.id.editTextTextPersonName);
         String lg=login.getText().toString();
         Intent intent= new Intent(Connexion.this, listFiche.class);
-        Visiteur v=visiteurSqlHelper.getVisiteur(lg);
-        intent.putExtra("id", v.getID_VISIT());
+        //Visiteur v=visiteurSqlHelper.getVisiteur(lg);
+        //intent.putExtra("id", v.getID_VISIT());
         startActivity(intent);
 
     }

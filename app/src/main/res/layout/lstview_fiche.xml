@@ -5,7 +5,7 @@
 
 
     <ListView
-        android:id="@+id/lstView"
+        android:id="@+id/lstViewFiche"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>
