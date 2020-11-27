@@ -1,6 +1,5 @@
 package com.example.splashscreen;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -51,9 +50,9 @@ public class FicheSqlHelper extends SQLiteOpenHelper {
     /************************************************/
     /******** retourne la liste des Fiche         **/
     /************************************************/
-    public ArrayList<Fiche> getLesSeries() {
+    public ArrayList<Fiche> getLesSeries(String id) {
         ArrayList<Fiche> lesSesries = new ArrayList<Fiche>();
-        String selectQuery = "SELECT  * FROM " + TABLE_FICHE;
+        String selectQuery = "SELECT "+ COLUMN_MOIS+", LIBELLE FROM "+ TABLE_FICHE+" INNER JOIN ETAT ON "+TABLE_FICHE+"."+COLUMN_ID_ETAT+"= ETAT."+ COLUMN_ID_ETAT+" WHERE "+COLUMN_ID_VISIT+" = "+id;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
